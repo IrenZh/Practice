@@ -1,6 +1,13 @@
+class IdException extends Error {
+    constructor(message){
+        super(message);
+        this.name = 'IdException';
+    }
+}
+
 function showUser(id){
     if (id < 0){
-        throw new Error ('ID must not be negative');
+        throw new IdException('ID must not be negative');
     }
     return { id };
 }
@@ -14,8 +21,8 @@ function showUsers(ids) {
             let user = showUser(id);
             validUsers.push(user);
         } catch (error) {
-            console.error('ID must not be negative');
-
+            (error instanceof IdException) 
+            console.log(error.name, error.message);;
         }  
     }
     return validUsers;
