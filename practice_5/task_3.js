@@ -4,7 +4,7 @@ class Person {
         this.surname = surname;
     } 
     showFullName() {
-        console.log(this.name, this.surname);
+        return (this.name, this.surname);
     }
 }
 

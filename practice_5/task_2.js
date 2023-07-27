@@ -8,16 +8,10 @@ let mentor = {
 
 let showProps = (obj) => {
     let propertyNames = Object.keys(obj);
+    let valuesArray = Object.values(obj);
 
-    let propertyArray = [];
-    let valuesArray = [];
-
-    for (let name of propertyNames){
-        propertyArray.push(name);
-        valuesArray.push(obj[name]);
-    }
-    console.log('Property Array:', propertyArray)
-    console.log('Values Array:', valuesArray)
+    console.log('Property Array:', propertyNames);
+    console.log('Values Array:', valuesArray);
 }
 
 showProps(mentor);
