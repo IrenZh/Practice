@@ -1,0 +1,16 @@
+<body>
+	<h2>Article header</h2>      
+      <div id="text">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+      </div>
+	<p>Another text</p>
+  <script>
+   let divElements = document.querySelectorAll('#text p');
+   divElements.forEach((element, index) => {
+        console.log(`Selector text ${index}: ${element.textContent}`);
+      });
+  </script>
+    </body>
+

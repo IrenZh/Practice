@@ -1,0 +1,21 @@
+<body>
+    <input type="text" id="input1" value="Text1">
+    <input type="text" id="input2" value="Text2">
+
+    <script>
+        function changeInputValues() {
+            let input1 = document.getElementById("input1");
+            let input2 = document.getElementById("input2");
+
+            let message1 = prompt("Enter the first message:");
+            input1.value = message1;
+            let message2 = prompt("Enter the second message:");
+            input2.value = message2;
+
+            let tempValue = input1.value;
+            input1.value = input2.value;
+            input2.value = tempValue;
+        }
+        changeInputValues();
+    </script>
+</body>

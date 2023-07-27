@@ -1,0 +1,39 @@
+<body>
+    <h1>I am a big header!!!</h1>
+    <div id="myDiv">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+        <p>Fourth paragraph</p>
+    </div>
+    <ul id="myList">
+        <li>Make</li>
+        <li>me</li>
+        <li>horizontal!</li>
+    </ul>
+    <span>Make me invisible, please!</span>
+
+    <script>
+
+        const header = document.querySelector("h1");
+        const paragraphs = document.querySelectorAll("#myDiv p");
+        const listItems = document.querySelectorAll("#myList li");
+        const span = document.querySelector("span");
+
+        header.style.fontSize = "24px";
+        header.style.backgroundColor = "green";
+
+        paragraphs[0].style.fontWeight = "bold";
+        paragraphs[1].style.color = "red";
+        paragraphs[2].style.textDecoration = "underline";
+        paragraphs[3].style.fontStyle = "italic";
+        paragraphs[3].style.color = "grey";
+
+        listItems.forEach(item => {
+            item.style.display = "inline";
+            item.style.marginRight = "-4";
+        });
+
+        span.style.display = "none";
+    </script>
+</body>
