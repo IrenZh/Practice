@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Task 4.2</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <script>
+    let listItems = document.querySelectorAll("#list li");
+      
+      let result = [
+        listItems[0].innerText,
+        listItems[listItems.length - 1].innerText,
+        listItems[1].innerText,
+        listItems[3].innerText,
+        listItems[2].innerText,
+      ];
+
+    alert('Результат виводу: ' + result.join(', '));
+  </script>
+  </body>
+</html>
