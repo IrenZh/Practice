@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Task 4.1</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <script>
+        let listItems = document.getElementsByTagName('li');
+  
+        const result = [
+          listItems[0].textContent,
+          listItems[listItems.length - 1].textContent,
+          listItems[1].textContent,
+          listItems[3].textContent,
+          listItems[2].textContent,
+        ];
+  
+        alert('Результат виводу: ' + result.join(', '));
+    </script>
+  </body>
+</html>

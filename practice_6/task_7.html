@@ -1,0 +1,16 @@
+<body>
+    <script>
+        let mainElement = document.createElement("main");
+        mainElement.setAttribute("class", "mainClass");
+
+        let divElement = document.createElement("div");
+        divElement.setAttribute("id", "myDiv");
+
+        let paragraphElement = document.createElement("p");
+        paragraphElement.textContent = "First paragraph";
+
+        divElement.appendChild(paragraphElement);
+        mainElement.appendChild(divElement);
+        document.body.appendChild(mainElement);
+    </script>
+</body>
