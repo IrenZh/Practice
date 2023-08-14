@@ -1,0 +1,28 @@
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let button = document.getElementById('myButton');
+            let messageArea = document.getElementById('messageArea');
+
+            button.addEventListener('click', function() {
+                messageArea.textContent = "I was pressed!";
+            });
+
+            button.addEventListener('mouseenter', function() {
+                messageArea.textContent = "Mouse on me!";
+            });
+
+            button.addEventListener('mouseleave', function() {
+                messageArea.textContent = "Mouse is not on me!";
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="myButton">Live button!</button>
+    <p id="messageArea"></p>
+</body>
+
+
+
+

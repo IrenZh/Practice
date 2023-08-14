@@ -1,0 +1,24 @@
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let dropdown = document.getElementById('dropdown');
+            let removeButton = document.getElementById('removeButton');
+
+            removeButton.addEventListener('click', function() {
+                let selectedIndex = dropdown.selectedIndex;
+                if (selectedIndex !== -1) {
+                    dropdown.remove(selectedIndex);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <select id="dropdown">
+        <option value="item1">Peter</option>
+        <option value="item2">Jane</option>
+        <option value="item3">Ann</option>
+        <option value="item4">Ira</option>
+    </select>
+    <button id="removeButton">Choose and Delete</button>
+</body>

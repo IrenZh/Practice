@@ -1,0 +1,17 @@
+<head>
+    <script>
+        function updateWindowSize() {
+            let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            let height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            let sizeInfo = "Width: " + width + "px, Height: " + height + "px";
+            document.getElementById('sizeInfo').textContent = sizeInfo;
+        }
+
+        window.addEventListener('resize', updateWindowSize);
+        document.addEventListener('DOMContentLoaded', updateWindowSize);
+    </script>
+</head>
+<body>
+    <p id="sizeInfo"></p>
+</body>

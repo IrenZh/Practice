@@ -1,0 +1,46 @@
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let body = document.body;
+            let firstButton = document.getElementById('button1');
+            let secondButton = document.getElementById('button2');
+            let thirdButton = document.getElementById('button3');
+            let link = document.getElementById('link');
+
+            firstButton.addEventListener('click', function() {
+                body.style.backgroundColor = 'blue';
+            });
+
+            secondButton.addEventListener('dblclick', function() {
+                body.style.backgroundColor = 'pink';
+            });
+
+            let holdTimeout;
+            thirdButton.addEventListener('mousedown', function() {
+                body.style.backgroundColor = 'brown';
+                holdTimeout = setTimeout(function() {
+                    body.style.backgroundColor = 'white';
+                }, 1000);
+            });
+
+            thirdButton.addEventListener('mouseup', function() {
+                clearTimeout(holdTimeout);
+                body.style.backgroundColor = 'white';
+            });
+
+            link.addEventListener('mouseenter', function() {
+                body.style.backgroundColor = 'yellow';
+            });
+
+            link.addEventListener('mouseleave', function() {
+                body.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="button1">Click me for blue</button>
+    <button id="button2">Double-click me for pink</button>
+    <button id="button3">Press and hold me</button>
+    <a id="link" href="#">Hover over me</a>
+</body>
