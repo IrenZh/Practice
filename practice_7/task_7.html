@@ -1,0 +1,44 @@
+<head>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let countryDropdown = document.getElementById('country');
+            let citiesDropdown = document.getElementById('cities');
+            let resultParagraph = document.querySelector('p');
+
+            let citiesData = {
+                'ger': ['Berlin', 'Munich', 'Hamburg'],
+                'usa': ['New York', 'Los Angeles', 'Chicago'],
+                'ukr': ['Kyiv', 'Lviv', 'Odesa']
+            };
+
+            countryDropdown.addEventListener('change', function() {
+                let selectedCountry = countryDropdown.value;
+                citiesDropdown.innerHTML = '';
+                
+                if (selectedCountry in citiesData) {
+                    citiesData[selectedCountry].forEach(function(city) {
+                        let option = document.createElement('option');
+                        option.value = city;
+                        option.textContent = city;
+                        citiesDropdown.appendChild(option);
+                    });
+
+                    resultParagraph.textContent = 'Selected Country: ' + countryDropdown.options[countryDropdown.selectedIndex].text +
+                                                  ', Selected City: ' + citiesDropdown.options[citiesDropdown.selectedIndex].text;
+                } else {
+                    resultParagraph.textContent = '';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="ger">Germany</option>
+        <option value="usa">USA</option>
+        <option value="ukr">Ukraine</option>
+    </select>
+                    
+    <select name="cities" id="cities"></select>
+    <p></p>
+</body>
