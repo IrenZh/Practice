@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Download Books</title>
+    <script>
+        function downloadBooks() {
+            let downloadButton = document.getElementById("downloadButton");
+            let booksList = document.getElementById("booksList");
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        let authors = JSON.parse(xhr.responseText);
+                        updateButtonAndList(authors);
+                    }
+                }
+            };
+            xhr.send();
+        }
+        
+        function updateButtonAndList(authors) {
+            let downloadButton = document.getElementById("downloadButton");
+            let booksList = document.getElementById("booksList");
+            
+            downloadButton.innerText = "Books Downloaded!";
+            
+            let listItems = authors.map(author => `<li>${author.name}</li>`).join('');
+            booksList.innerHTML = "<ul>" + listItems + "</ul>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Task 2</h1>
+    <button id="downloadButton" onclick="downloadBooks()">Download Books</button>
+    <div id="booksList"></div>
+</body>
+</html>
