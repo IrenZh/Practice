@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Voting</title>
+    <script>
+        function sendVote() {
+            let voteButton = document.getElementById("voteButton");
+            let resultDiv = document.getElementById("resultDiv");
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    let currentDate = new Date().toLocaleString(); 
+                    voteButton.innerText = "Your vote is accepted! " + currentDate;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Task 1</h1>
+    <button id="voteButton" onclick="sendVote()">Vote</button>
+    <div id="resultDiv"></div>
+</body>
+</html>
